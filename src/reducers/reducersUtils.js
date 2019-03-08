@@ -1,3 +1,12 @@
+export const repairFetchedJobs = jobs => {
+  jobs.forEach(job => {
+    // Fetched IDs has special characters in their seeds.
+    // Ex. `\` which is not allowed in routing.
+    job['id='] = job['id='].slice(-36)
+  })
+  return jobs
+}
+
 export const unwrapCategoriesFromJobs = jobs => {
   let categories = ['all']
   jobs.forEach(job => {
@@ -12,7 +21,7 @@ export const unwrapCategoriesFromJobs = jobs => {
   return uniqueCategories
 }
 
-export const updateMapData = (jobs, checkedCategory) =>
+export const createMapDataWithCategory = (jobs, checkedCategory) =>
   jobs
     .filter(job => {
       const jobCategory = job.marker_icon
@@ -21,10 +30,12 @@ export const updateMapData = (jobs, checkedCategory) =>
         (checkedCategory === 'all' ? jobCategory : checkedCategory)
       )
     })
-    .map(job => ({
-      jobId: job['id='],
-      title: job.title,
-      companyName: job.company_name,
-      lat: job.latitude,
-      lon: job.longitude
-    }))
+    .map(job => jobObjectToMapData(job))
+
+export const jobObjectToMapData = job => ({
+  jobId: job['id='],
+  title: job.title,
+  companyName: job.company_name,
+  lat: job.latitude,
+  lon: job.longitude
+})

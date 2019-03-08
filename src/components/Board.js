@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { PUBLIC_URL } from '../index'
 
 class Board extends Component {
+  handleUpdateMap = job => {
+    this.props.checkedCategory('')
+    this.props.updateMapDataWithJob(job)
+  }
+
   JobCard = item => {
     const job = item.job
     const isUndisclosedSalary =
@@ -32,7 +38,10 @@ class Board extends Component {
             <div className='card-body'>
               <h5 className='card-title'>
                 <div className='job-title'>
-                  <Link to={'/job/id-' + job['id=']}>
+                  <Link
+                    to={PUBLIC_URL + '/job/id-' + job['id=']}
+                    onClick={() => this.handleUpdateMap(job)}
+                  >
                     <p>{job.title}</p>
                   </Link>
                 </div>
@@ -72,11 +81,7 @@ class Board extends Component {
           (currentCategory === 'all' ? job.marker_icon : currentCategory)
       )
       .map(job => <this.JobCard job={job} key={job['id=']} />)
-    return (
-      <div id='board' className='row justify-content-md-center pb-5'>
-        <div className='col-sm-9'>{jobs}</div>
-      </div>
-    )
+    return jobs
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { PUBLIC_URL } from '../index'
 
 class FiltersBar extends Component {
   componentDidUpdate(prevProps) {
@@ -29,7 +30,7 @@ class FiltersBar extends Component {
   Categories = () => {
     return this.props.categories.map((category, i) => (
       <Link
-        to={'/jobs/category-' + category}
+        to={PUBLIC_URL + '/jobs/category-' + category}
         key={category}
         className='navbar-brand'
         onClick={() => this.handleCategoryClick(category)}

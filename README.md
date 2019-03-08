@@ -1,8 +1,12 @@
 ## Job Board
 
+### Description
+
+Example of IT job board.
+
 ### Features
 
-- filter jobs by categories
+- filter jobs by technologies
 - update map when filtering
 - clicable map marks
 - routing between `Job.js` and `Board.js` (with proper URL)
@@ -12,8 +16,6 @@ Deliberately omitted:
 - tests
 - PropTypes
 - error handling
-- `Job.js` page body
-- RWD
 - pagination
 
 ### Tools
@@ -29,3 +31,7 @@ npm
 To build: `npm install`
 
 To run in development mode: `npm start`
+
+### Latest version
+
+https://twistezo.github.io/job-board/

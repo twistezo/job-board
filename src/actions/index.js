@@ -26,13 +26,18 @@ export const checkedCategory = category => ({
   category
 })
 
-export const updateMapData = (jobs, checkedCategory) => ({
-  type: 'MAP_DATA',
+const updateMapDataWithCategory = (jobs, checkedCategory) => ({
+  type: 'UPDATE_MAP_DATA_WITH_CATEGORY',
   jobs,
   checkedCategory
 })
 
+export const updateMapDataWithJob = job => ({
+  type: 'UPDATE_MAP_DATA_WITH_JOB',
+  job
+})
+
 export const switchCategory = (jobs, category) => dispatch => {
   dispatch(checkedCategory(category))
-  dispatch(updateMapData(jobs, category))
+  dispatch(updateMapDataWithCategory(jobs, category))
 }

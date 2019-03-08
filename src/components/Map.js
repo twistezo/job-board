@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import L from 'leaflet'
+import { PUBLIC_URL } from '../index'
 
 class Map extends Component {
   constructor(props) {
@@ -28,7 +29,9 @@ class Map extends Component {
   }
 
   initMap = () => {
-    this.map = L.map('map')
+    this.map = L.map('map', {
+      maxZoom: 12
+    })
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution:
@@ -48,7 +51,7 @@ class Map extends Component {
       let marker = L.marker([data.lat, data.lon])
       marker.bindPopup(
         L.popup().setContent(
-          `<p>${data.title}</p>
+          `<p class='pb-0 mb-0'>${data.title}</p>
           <p>- ${data.companyName}</p>`
         )
       )
@@ -57,7 +60,7 @@ class Map extends Component {
           ...this.state,
           redirect: {
             should: true,
-            path: '/job/id-' + data.jobId
+            path: PUBLIC_URL + '/job/id-' + data.jobId
           }
         })
       })

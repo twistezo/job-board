@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Job from '../components/Job'
+import Job from '../components/Job/Job'
 
 const mapStateToProps = state => ({
   jobs: state.jobs

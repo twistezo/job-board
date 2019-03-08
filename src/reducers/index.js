@@ -1,12 +1,17 @@
 import { combineReducers } from 'redux'
-import { unwrapCategoriesFromJobs, updateMapData } from './reducersUtils'
+import {
+  repairFetchedJobs,
+  unwrapCategoriesFromJobs,
+  createMapDataWithCategory,
+  jobObjectToMapData
+} from './reducersUtils'
 
 const jobsShape = []
 
 const jobs = (state = jobsShape, action) => {
   switch (action.type) {
     case 'JOBS_FETCHED':
-      return action.jobs
+      return repairFetchedJobs(action.jobs)
     default:
       return state
   }
@@ -30,10 +35,15 @@ const filters = (state = filtersShape, action) => {
         ...state,
         checkedCategory: action.category
       }
-    case 'MAP_DATA':
+    case 'UPDATE_MAP_DATA_WITH_CATEGORY':
       return {
         ...state,
-        mapData: updateMapData(action.jobs, action.checkedCategory)
+        mapData: createMapDataWithCategory(action.jobs, action.checkedCategory)
+      }
+    case 'UPDATE_MAP_DATA_WITH_JOB':
+      return {
+        ...state,
+        mapData: [jobObjectToMapData(action.job)]
       }
     default:
       return state
