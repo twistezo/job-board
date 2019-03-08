@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/job-board/static/js/runtime~main.29f8c1e9.js"
   },
   {
-    "revision": "1fa1120fbb3e94d85504",
-    "url": "/job-board/static/js/main.1fa1120f.chunk.js"
+    "revision": "0a632e2c0f8a00657dd7",
+    "url": "/job-board/static/js/main.0a632e2c.chunk.js"
   },
   {
     "revision": "d5574ae43f908eaa19ee",
     "url": "/job-board/static/js/2.d5574ae4.chunk.js"
   },
   {
-    "revision": "1fa1120fbb3e94d85504",
+    "revision": "0a632e2c0f8a00657dd7",
     "url": "/job-board/static/css/main.bded88fc.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/job-board/static/css/2.48a8e970.chunk.css"
   },
   {
-    "revision": "a7c3d0841e103903414ad87a22e0912e",
+    "revision": "ce2fdd4ffc3d016cace1c22622733b6e",
     "url": "/job-board/index.html"
   }
 ];
