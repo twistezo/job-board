@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { PUBLIC_URL } from '../../index'
+import { PUBLIC_URL } from '../../consts'
 
 class JobHead extends Component {
   render() {

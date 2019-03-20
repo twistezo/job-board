@@ -1,28 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { PUBLIC_URL } from '../index'
+import { PUBLIC_URL } from '../consts'
 
 class FiltersBar extends Component {
-  componentDidUpdate(prevProps) {
-    const checkedCategory = this.props.checkedCategory
-    if (prevProps.checkedCategory !== checkedCategory) {
-      this.handleCategoryActive(this.props.checkedCategory)
-    }
-  }
-
-  handleCategoryActive = checkedCategory => {
-    let categoriesEl = document.querySelector('#filters-bar')
-    // unactive all categories
-    categoriesEl
-      .querySelectorAll('span')
-      .forEach(el => el.classList.remove('active'))
-    // active checked category
-    let activeCategory = [...categoriesEl.querySelectorAll('span')].find(
-      el => el.innerText === checkedCategory
-    )
-    if (activeCategory !== undefined) activeCategory.classList.add('active')
-  }
-
   handleCategoryClick = category => {
     this.props.switchCategory(this.props.jobs, category)
   }
@@ -35,7 +15,11 @@ class FiltersBar extends Component {
         className='navbar-brand'
         onClick={() => this.handleCategoryClick(category)}
       >
-        <span className={i === 0 ? 'active' : ''}>{category + ' '}</span>
+        <span
+          className={category === this.props.checkedCategory ? 'active' : ''}
+        >
+          {category + ' '}
+        </span>
       </Link>
     ))
   }

@@ -4,11 +4,8 @@ import JobRequirements from './JobRequirements'
 import JobDescription from './JobDescription'
 
 class Job extends Component {
-  render() {
-    const job = this.props.jobs.find(
-      job => job['id='] === this.props.routeParamId
-    )
-
+  Job = () => {
+    const job = this.props.jobs.find(job => job.id === this.props.routeParamId)
     return (
       <div id='job'>
         <JobHead job={job} />
@@ -16,6 +13,10 @@ class Job extends Component {
         <JobDescription job={job} />
       </div>
     )
+  }
+
+  render() {
+    return this.props.jobs.length > 0 ? <this.Job /> : ''
   }
 }
 

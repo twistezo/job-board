@@ -9,9 +9,9 @@ Example of IT job board.
 - filter jobs by technologies
 - update map when filtering
 - clicable map marks
-- routing between `Job.js` and `Board.js` (with proper URL)
+- routing
 
-Deliberately omitted:
+Deliberately omitted (demo version):
 
 - tests
 - PropTypes

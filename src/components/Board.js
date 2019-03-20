@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { PUBLIC_URL } from '../index'
+import { PUBLIC_URL } from '../consts'
 
 class Board extends Component {
   handleUpdateMap = job => {
@@ -39,7 +39,7 @@ class Board extends Component {
               <h5 className='card-title'>
                 <div className='job-title'>
                   <Link
-                    to={PUBLIC_URL + '/job/id-' + job['id=']}
+                    to={PUBLIC_URL + '/job/id-' + job.id}
                     onClick={() => this.handleUpdateMap(job)}
                   >
                     <p>{job.title}</p>
@@ -80,7 +80,7 @@ class Board extends Component {
           job.marker_icon ===
           (currentCategory === 'all' ? job.marker_icon : currentCategory)
       )
-      .map(job => <this.JobCard job={job} key={job['id=']} />)
+      .map(job => <this.JobCard job={job} key={job.id} />)
     return jobs
   }
 }

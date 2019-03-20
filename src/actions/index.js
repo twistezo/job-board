@@ -1,12 +1,12 @@
-const url = 'https://test.justjoin.it/offers'
+import { ActionType, TEST_DATA_URL } from '../consts'
 
 const jobsFetched = jobs => ({
-  type: 'JOBS_FETCHED',
+  type: ActionType.JOBS_FETCHED,
   jobs
 })
 
 export const fetchJobs = () => dispatch => {
-  fetch(url)
+  fetch(TEST_DATA_URL)
     .then(response => response.json())
     .then(data => {
       dispatch(jobsFetched(data))
@@ -17,23 +17,23 @@ export const fetchJobs = () => dispatch => {
 }
 
 const unwrapCategories = jobs => ({
-  type: 'UNWRAP_CATEGORIES',
+  type: ActionType.UNWRAP_CATEGORIES,
   jobs
 })
 
 export const checkedCategory = category => ({
-  type: 'CHECKED_CATEGORY',
+  type: ActionType.CHECKED_CATEGORY,
   category
 })
 
 const updateMapDataWithCategory = (jobs, checkedCategory) => ({
-  type: 'UPDATE_MAP_DATA_WITH_CATEGORY',
+  type: ActionType.UPDATE_MAP_DATA_WITH_CATEGORY,
   jobs,
   checkedCategory
 })
 
 export const updateMapDataWithJob = job => ({
-  type: 'UPDATE_MAP_DATA_WITH_JOB',
+  type: ActionType.UPDATE_MAP_DATA_WITH_JOB,
   job
 })
 

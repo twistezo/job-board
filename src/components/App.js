@@ -9,14 +9,9 @@ import { FiltersBarContainer } from '../containers/FiltersBarContainer'
 import { BoardContainer } from '../containers/BoardContainer'
 import { JobContainer } from '../containers/JobContainer'
 import { MapContainer } from '../containers/MapContainer'
-import { PUBLIC_URL } from '../index'
+import { PUBLIC_URL } from '../consts'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.map = null
-  }
-
   componentDidMount() {
     this.props.fetchJobs()
   }

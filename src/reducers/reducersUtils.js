@@ -2,7 +2,7 @@ export const repairFetchedJobs = jobs => {
   jobs.forEach(job => {
     // Fetched IDs has special characters in their seeds.
     // Ex. `\` which is not allowed in routing.
-    job['id='] = job['id='].slice(-36)
+    job.id = job.id.slice(-36)
   })
   return jobs
 }
@@ -21,7 +21,7 @@ export const unwrapCategoriesFromJobs = jobs => {
   return uniqueCategories
 }
 
-export const createMapDataWithCategory = (jobs, checkedCategory) =>
+export const updateMapDataWithCategory = (jobs, checkedCategory) =>
   jobs
     .filter(job => {
       const jobCategory = job.marker_icon
@@ -33,7 +33,7 @@ export const createMapDataWithCategory = (jobs, checkedCategory) =>
     .map(job => jobObjectToMapData(job))
 
 export const jobObjectToMapData = job => ({
-  jobId: job['id='],
+  jobId: job.id,
   title: job.title,
   companyName: job.company_name,
   lat: job.latitude,

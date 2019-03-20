@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import L from 'leaflet'
-import { PUBLIC_URL } from '../index'
+import { PUBLIC_URL } from '../consts'
 
 class Map extends Component {
   constructor(props) {
@@ -37,10 +37,6 @@ class Map extends Component {
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map)
-
-    this.map.on('load', () => {
-      this.map.setView([50, 25])
-    })
   }
 
   updateMap = coordsData => {
