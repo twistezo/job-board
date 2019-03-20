@@ -17,6 +17,7 @@ Deliberately omitted (demo version):
 - PropTypes
 - error handling
 - pagination
+- 404
 
 ### Tools
 
@@ -26,11 +27,21 @@ JavaScript, React, Redux, Leaflet, Bootstrap
 
 npm
 
-### Build, run
+### Build, run, test
 
-To build: `npm install`
+Firstly: `npm install`
 
 To run in development mode: `npm start`
+
+To build in production mode: `npm run build`
+
+To run locally prod mode:
+
+```
+npm install -g serve
+serve -s build
+
+```
 
 ### Latest version
 
