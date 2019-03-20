@@ -2,7 +2,7 @@
 
 ### Description
 
-Example of IT job board.
+Example of IT job board
 
 ### Features
 
