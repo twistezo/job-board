@@ -40,7 +40,6 @@ To run locally prod mode:
 ```
 npm install -g serve
 serve -s build
-
 ```
 
 ### Latest version
