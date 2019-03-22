@@ -19,6 +19,8 @@ Deliberately omitted (demo version):
 - pagination
 - 404
 
+Note: Job offers come from justjoint.it public test data.
+
 ### Tools
 
 JavaScript, React, Redux, Leaflet, Bootstrap
