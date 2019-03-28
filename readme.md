@@ -2,7 +2,9 @@
 
 ### Description
 
-Example of IT job board
+Prototype of IT job board with map.
+
+Latest version: https://twistezo.github.io/job-board/
 
 ### Features
 
@@ -11,7 +13,7 @@ Example of IT job board
 - clicable map marks
 - routing
 
-Deliberately omitted (demo version):
+Deliberately omitted (prototype version):
 
 - tests
 - PropTypes
@@ -23,27 +25,19 @@ Note: Job offers come from justjoint.it public test data.
 
 ### Tools
 
-JavaScript, React, Redux, Leaflet, Bootstrap
-
-### Requirements
-
-npm
+React, Redux, Leaflet, Bootstrap
 
 ### Build, run, test
 
-Firstly: `npm install`
+Build: `npm install`
 
-To run in development mode: `npm start`
+Run in development mode: `npm start`
 
-To build in production mode: `npm run build`
+Build in production mode: `npm run build`
 
-To run locally prod mode:
+Run locally in production mode:
 
 ```
 npm install -g serve
 serve -s build
 ```
-
-### Latest version
-
-https://twistezo.github.io/job-board/
