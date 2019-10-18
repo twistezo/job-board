@@ -21,7 +21,7 @@ Deliberately omitted (prototype version):
 - pagination
 - 404
 
-Note: Job offers come from justjoint.it public test data.
+Note: Job offers comes from justjoint.it public test data.
 
 ### Tools
 
