@@ -21,15 +21,10 @@ export const unwrapCategoriesFromJobs = jobs => {
   return uniqueCategories
 }
 
+
 export const updateMapDataWithCategory = (jobs, checkedCategory) =>
   jobs
-    .filter(job => {
-      const jobCategory = job.marker_icon
-      return (
-        jobCategory ===
-        (checkedCategory === 'all' ? jobCategory : checkedCategory)
-      )
-    })
+    .filter(job => ['all', job.marker_icon].includes(checkedCategory))
     .map(job => jobObjectToMapData(job))
 
 export const jobObjectToMapData = job => ({

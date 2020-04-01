@@ -73,15 +73,9 @@ class Board extends Component {
   }
 
   render() {
-    const currentCategory = this.props.routeParamCategory
-    const jobs = this.props.jobs
-      .filter(
-        job =>
-          job.marker_icon ===
-          (currentCategory === 'all' ? job.marker_icon : currentCategory)
-      )
+    return this.props.jobs
+      .filter(job => ['all', job.marker_icon].includes(this.props.routeParamCategory))
       .map(job => <this.JobCard job={job} key={job.id} />)
-    return jobs
   }
 }
 
