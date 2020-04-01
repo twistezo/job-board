@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { ActionType } from '../consts'
 import {
   repairFetchedJobs,
-  unwrapCategoriesFromJobs,
+  retrieveCategories,
   updateMapDataWithCategory,
   jobObjectToMapData
 } from './reducersUtils'
@@ -29,7 +29,7 @@ const filters = (state = filtersShape, action) => {
     case ActionType.UNWRAP_CATEGORIES:
       return {
         ...state,
-        data: unwrapCategoriesFromJobs(action.jobs)
+        data: retrieveCategories(action.jobs)
       }
     case ActionType.CHECKED_CATEGORY:
       return {
