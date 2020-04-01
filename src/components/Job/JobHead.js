@@ -5,18 +5,6 @@ import { PUBLIC_URL } from '../../consts'
 class JobHead extends Component {
   render() {
     const job = this.props.job
-    const isUndisclosedSalary =
-      job.salary_from === null ||
-      job.salary_to === null ||
-      job.salary_currency === null
-    const salary = isUndisclosedSalary
-      ? 'Undisclosed salary'
-      : job.salary_from +
-        ' - ' +
-        job.salary_to +
-        ' ' +
-        job.salary_currency.toUpperCase()
-
     return (
       <div className='job-card row d-flex align-items-center justify-content-center'>
         <div className='col-sm-2 '>
@@ -33,7 +21,11 @@ class JobHead extends Component {
               <h4>{job.title}</h4>
             </div>
             <div className='col-sm-5 text-right'>
-              <h4>{salary}</h4>
+              <h4>{
+                [job.salary_from, job.salary_to, job.salary_currency].includes(null)
+                  ? 'Undisclosed salary'
+                  : `${job.salary_from} - ${job.salary_to} ${job.salary_currency.toUpperCase()}`
+              }</h4>
             </div>
           </div>
           <div className='row'>
