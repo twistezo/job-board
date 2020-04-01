@@ -7,18 +7,13 @@ export const repairFetchedJobs = jobs => {
   return jobs
 }
 
-export const unwrapCategoriesFromJobs = jobs => {
-  let categories = ['all']
-  jobs.forEach(job => {
-    categories.push(job.marker_icon)
-  })
-  let uniqueCategories = [...new Set(categories)]
-  uniqueCategories.sort()
+export const retrieveCategories = jobs => {
+  const categories = ['all', ...new Set(jobs.map(job => job.marker_icon))].sort()
   // move 'other' to end
-  uniqueCategories.push(
-    uniqueCategories.splice(uniqueCategories.indexOf('other'), 1)[0]
+  categories.push(
+    categories.splice(categories.indexOf('other'), 1)[0]
   )
-  return uniqueCategories
+  return categories
 }
 
 export const updateMapDataWithCategory = (jobs, checkedCategory) =>
